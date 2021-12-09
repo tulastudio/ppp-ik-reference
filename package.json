@@ -1,12 +1,12 @@
 {
   "name": "ppp-ik-reference",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Peter Simonsson <peter@tulastudio.se>",
   "license": "none",
   "private": true,
   "scripts": {
-    "start": "parcel src/index.html --port 7819"
+    "start": "parcel src/index.html --port 7819",
+    "build": "parcel build src/index.html"
   },
   "devDependencies": {
     "parcel": "^2.0.1",
