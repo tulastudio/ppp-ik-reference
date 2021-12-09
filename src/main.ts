@@ -1,7 +1,12 @@
 const selectedList = document.querySelector<HTMLElement>('[data-selected]');
-const fundList = document.querySelector<HTMLIFrameElement>('iframe[data-fund-list]');
+const fundListEl = document.querySelector<HTMLElement>('[data-fund-list]');
 
-const updateList = (funds: string[]) => {
+const fundList = window.initializeFundList(fundListEl, {
+	initialFunds: ['0P00000K9D', 'F0GBR05TYW'],
+	maxFunds: 3,
+});
+
+fundList.on('setFunds', (funds: string[]) => {
 	const nodes = funds.map(fund => {
 		const node = document.createElement('li');
 		const name = document.createTextNode(fund);
@@ -20,23 +25,6 @@ const updateList = (funds: string[]) => {
 	for (const node of nodes) {
 		selectedList.appendChild(node);
 	}
-};
-
-type BroadcastMessage =
-	| {
-			type: 'setHeight';
-			height: number;
-	  }
-	| { type: 'setFunds'; funds: string[] };
-
-window.addEventListener('message', (event: MessageEvent<BroadcastMessage>) => {
-	if (event.data.type === 'setHeight') {
-		fundList.style.height = event.data.height + 'px';
-	}
-
-	if (event.data.type === 'setFunds') {
-		updateList(event.data.funds);
-	}
 });
 
 selectedList.addEventListener('click', (event) => {
@@ -45,7 +33,6 @@ selectedList.addEventListener('click', (event) => {
 	if (event.target.hasAttribute('data-remove')) {
 		event.stopPropagation();
 		const fundId = event.target.getAttribute('data-remove');
-
-		fundList.contentWindow.postMessage({type: 'removeFund', fundId }, '*');
+		fundList.removeFund(fundId);
 	}
 });

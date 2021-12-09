@@ -9,6 +9,8 @@
     "start": "parcel src/index.html --port 7819"
   },
   "devDependencies": {
-    "parcel": "^2.0.0"
+    "parcel": "^2.0.1",
+    "posthtml": "^0.16.5",
+    "posthtml-expressions": "^1.9.0"
   }
 }
