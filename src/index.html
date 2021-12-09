@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fondtorget</title>
+	<style>
+		html {
+			color: #192030;
+			font-size: 20px;
+			font-family: sans-serif;
+			line-height: 1.4;
+			margin: 5vw 5vw;
+		}
+
+		iframe {
+			width: 100%;
+			border: 0;
+		}
+
+		hr {
+			border: 0;
+			border-top: 2px solid #eee;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		[data-selected] {
+			background-color: #f4f4f4;
+			padding: 20px;
+			border-radius: 16px;
+			margin-bottom: 20px;
+			min-height: 100px;
+			max-width: 100%;
+			width: 300px;
+
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+		[data-selected] li {
+			display: flex;
+			justify-content: space-between;
+		}
+	</style>
+</head>
+<body>
+	<ul data-selected></ul>
+
+	<hr>
+
+	<iframe src="https://pppension.test/wp-content/themes/pppension/dist/fund-list.html?maxFunds=3&initialFunds=0P00000K9D,F0GBR05TYW" data-fund-list></iframe>
+	<script src="./main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "pppension-fondtorget-reference",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Peter Simonsson <peter@tulastudio.se>",
+  "license": "none",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html --port 7819"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
