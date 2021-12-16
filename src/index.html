@@ -11,6 +11,9 @@
 			font-size: 20px;
 			font-family: sans-serif;
 			line-height: 1.4;
+		}
+
+		body {
 			margin: 5vw 5vw;
 		}
 
@@ -39,9 +42,21 @@
 			flex-direction: column;
 			gap: 4px;
 		}
+
 		[data-selected] li {
 			display: flex;
 			justify-content: space-between;
+		}
+
+		.fli-info {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 100;
+			width: 100vw;
+			height: 100vh;
 		}
 	</style>
 </head>
@@ -51,7 +66,6 @@
 	<hr>
 
 	<div data-fund-list></div>
-	<script src="{{ EMBED_URL || 'https://pppension.demo.tulastudio.se/wp-content/themes/pppension/dist/fund-list-embed.js' }}"></script>
-	<script src="./main.ts"></script>
+	<script src="./main.ts" type="module"></script>
 </body>
 </html>
