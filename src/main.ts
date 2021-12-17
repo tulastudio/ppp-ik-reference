@@ -157,6 +157,10 @@ window.addEventListener('message', (event: MessageEvent<FundListMessage>) => {
 			hideInfo();
 		}
 	}
+
+	if (event.data.type === 'disabledClick') {
+		console.log('Clicked a disable fund checkbox');
+	}
 });
 
 /**

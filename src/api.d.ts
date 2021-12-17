@@ -4,4 +4,5 @@ type FundListMessage =
 			height: number;
 	  }
 	| { type: 'setFunds'; funds: string[] }
-	| { type: 'setFundInfo'; fund: string | null };
+	| { type: 'setFundInfo'; fund: string | null }
+	| { type: 'disabledClick' };
