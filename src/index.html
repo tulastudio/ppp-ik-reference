@@ -20,6 +20,7 @@
 		.wrap {
 			padding-left: 5vw;
 			padding-right: 5vw;
+			margin-bottom: 5vw;
 		}
 
 		iframe {
@@ -30,7 +31,6 @@
 		[data-selected] {
 			background-color: #f4f4f4;
 			padding: 20px;
-			margin-bottom: 5vw;
 
 			border-radius: 16px;
 			min-height: 100px;
@@ -69,6 +69,8 @@
 <body>
 	<div class="wrap">
 		<ul data-selected></ul>
+		<button data-disable-selected>Disable selected</button>
+		<button data-enable-all>Enable all</button>
 	</div>
 	<div class="dark-mode">
 		<div data-fund-list class="wrap"></div>

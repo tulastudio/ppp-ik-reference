@@ -6,6 +6,8 @@ const WEBSITE_URL = process.env.WEBSITE_URL || 'https://pppension.demo.tulastudi
  * Get elements
  */
 const selectedList = document.querySelector<HTMLElement>('[data-selected]');
+const disableSelected = document.querySelector<HTMLElement>('[data-disable-selected]');
+const enableAll = document.querySelector<HTMLElement>('[data-enable-all]');
 const fundListEl = document.querySelector<HTMLElement>('[data-fund-list]');
 
 /**
@@ -13,7 +15,6 @@ const fundListEl = document.querySelector<HTMLElement>('[data-fund-list]');
  */
 let selectedFunds = [];
 let maxFunds = 3;
-
 /**
  * Get the URL to the list iframe
  */
@@ -183,4 +184,34 @@ selectedList.addEventListener('click', (event) => {
 		};
 		fundListIframe.contentWindow.postMessage(message, WEBSITE_URL);
 	}
+});
+
+/**
+ * Disable selected funds
+ */
+
+disableSelected.addEventListener('click', () => {
+	const fundListIframe = getFundListIframe();
+
+	const message: FundListMessage = {
+		type: 'setDisabledFunds',
+		funds: selectedFunds,
+	};
+
+	fundListIframe.contentWindow.postMessage(message, WEBSITE_URL);
+});
+
+/**
+ * Enable all funds
+ */
+
+enableAll.addEventListener('click', () => {
+	const fundListIframe = getFundListIframe();
+
+	const message: FundListMessage = {
+		type: 'setDisabledFunds',
+		funds: [],
+	};
+
+	fundListIframe.contentWindow.postMessage(message, WEBSITE_URL);
 });
