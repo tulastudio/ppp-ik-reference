@@ -6,4 +6,5 @@ type FundListMessage =
 	| { type: 'setFunds'; funds: string[] }
 	| { type: 'setDisabledFunds'; funds: string[] }
 	| { type: 'setFundInfo'; fund: string | null }
-	| { type: 'disabledClick' };
+	| { type: 'disabledUnselectedClick' }
+	| { type: 'disabledSelectedClick' };

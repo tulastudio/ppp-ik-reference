@@ -15,6 +15,7 @@ const fundListEl = document.querySelector<HTMLElement>('[data-fund-list]');
  */
 let selectedFunds = [];
 let maxFunds = 3;
+
 /**
  * Get the URL to the list iframe
  */
@@ -159,8 +160,12 @@ window.addEventListener('message', (event: MessageEvent<FundListMessage>) => {
 		}
 	}
 
-	if (event.data.type === 'disabledClick') {
-		console.log('Clicked a disable fund checkbox');
+	if (event.data.type === 'disabledSelectedClick') {
+		console.log('Clicked a selected disabled fund checkbox');
+	}
+
+	if (event.data.type === 'disabledUnselectedClick') {
+		console.log('Clicked an unselected disabled fund checkbox');
 	}
 });
 
