@@ -1,6 +1,6 @@
 import { enableBodyScroll, disableBodyScroll } from 'body-scroll-lock';
 
-const WEBSITE_URL = process.env.WEBSITE_URL || 'https://pppension.demo.tulastudio.se';
+const WEBSITE_URL = process.env.WEBSITE_URL || 'https://pppension.se';
 
 /**
  * Get elements
