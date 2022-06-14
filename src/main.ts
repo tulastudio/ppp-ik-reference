@@ -140,7 +140,7 @@ window.addEventListener('message', (event: MessageEvent<FundListMessage>) => {
 	const fundListIframe = getFundListIframe();
 
 	if (event.origin !== WEBSITE_URL) {
-		console.warn('Received message from unknown origin', event.origin);
+		console.warn('Received message from unknown origin', event.origin, event.data);
 		return;
 	};
 
