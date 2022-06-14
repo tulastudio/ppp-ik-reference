@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "parcel src/index.html --port 7819",
-    "build": "parcel build src/index.html --dist-dir public"
+    "build": "parcel build src/index.html --dist-dir dist"
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.0",
